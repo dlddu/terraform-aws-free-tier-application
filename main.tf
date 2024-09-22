@@ -43,7 +43,7 @@ resource "aws_security_group" "this" {
 }
 
 resource "aws_instance" "this" {
-  ami                         = "ami-06f73fc34ddfd65c2"
+  ami                         = "ami-05d2438ca66594916"
   instance_type               = "t2.micro"
   key_name                    = aws_key_pair.this.key_name
   vpc_security_group_ids      = [aws_security_group.this.id]
