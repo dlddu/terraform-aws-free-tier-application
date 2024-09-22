@@ -8,7 +8,7 @@ module "free_tier" {
 }
 
 resource "aws_key_pair" "this" {
-  key_name   = var.ssh_key_name
+  key_name   = var.application_name
   public_key = var.public_key
 }
 
@@ -41,7 +41,6 @@ resource "aws_security_group" "this" {
     cidr_blocks = ["0.0.0.0/0"]
   }
 }
-
 
 resource "aws_instance" "this" {
   ami                         = "ami-06f73fc34ddfd65c2"

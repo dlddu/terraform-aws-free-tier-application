@@ -10,23 +10,10 @@ variable "subscriber_email_address" {
   type = string
 }
 
-variable "ssh_key_name" {
-  type = string
-}
-
 variable "public_key" {
-  type = string
-}
-
-variable "domain" {
   type = string
 }
 
 variable "user_data" {
   type = string
-}
-
-variable "user_data_replace_on_change" {
-  type    = bool
-  default = false
 }
