@@ -3,7 +3,7 @@ module "free_tier" {
   version = "0.0.2"
 
   account_alias            = var.account_alias
-  budget_description       = "${var.application_name} - free tier"
+  budget_description       = "${var.account_alias} (free tier)"
   subscriber_email_address = var.subscriber_email_address
 }
 
@@ -42,13 +42,15 @@ resource "aws_security_group" "this" {
   }
 }
 
+
 resource "aws_instance" "this" {
-  ami                         = "ami-05d2438ca66594916"
+  ami                         = "ami-06f73fc34ddfd65c2"
   instance_type               = "t2.micro"
   key_name                    = aws_key_pair.this.key_name
   vpc_security_group_ids      = [aws_security_group.this.id]
-  user_data_replace_on_change = var.user_data_replace_on_change
+  user_data_replace_on_change = true
   user_data                   = var.user_data
+  iam_instance_profile        = aws_iam_instance_profile.this.name
 }
 
 output "public_ip" {
