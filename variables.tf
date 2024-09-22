@@ -25,3 +25,8 @@ variable "domain" {
 variable "user_data" {
   type = string
 }
+
+variable "user_data_replace_on_change" {
+  type    = bool
+  default = false
+}
