@@ -50,6 +50,10 @@ resource "aws_instance" "this" {
   user_data_replace_on_change = true
   user_data                   = var.user_data
   iam_instance_profile        = aws_iam_instance_profile.this.name
+
+  root_block_device {
+    volume_size = var.volume_size
+  }
 }
 
 output "public_ip" {

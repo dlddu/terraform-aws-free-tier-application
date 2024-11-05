@@ -17,3 +17,8 @@ variable "public_key" {
 variable "user_data" {
   type = string
 }
+
+variable "volume_size" {
+  type    = number
+  default = 8
+}
